@@ -1,8 +1,8 @@
 # Logger
 
-The flexible digital diary software.
+The supersimple digital diary software.
 
 -----
 
-## How flexible?
+## How simple?
 
