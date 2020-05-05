@@ -10,3 +10,4 @@ repository = "https://github.com/Marnix0810/logger-diary"
 homepage = "https://marnix0810.github.io/logger-diary"
 
 [dependencies]
+chrono = "0.4.11"
