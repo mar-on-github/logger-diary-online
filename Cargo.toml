@@ -2,12 +2,12 @@
 name = "logger-diary"
 description = "The supersimple digital diary software."
 version = "0.1.0"
-authors = ["Marnix B <programmer.marxin0810@gmail.com>"]
+authors = ["MarlèneB <programmer.marxin0810@gmail.com>"]
 edition = "2018"
 license-file = "License.md"
 readme = "README.md"
-repository = "https://github.com/Marnix0810/logger-diary"
-homepage = "https://marnix0810.github.io/logger-diary"
+repository = "https://github.com/that_one_mar/logger-diary"
+homepage = "https://that_one_mar.github.io/logger-diary"
 
 [dependencies]
 chrono = "0.4.11"

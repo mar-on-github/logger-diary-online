@@ -45,4 +45,4 @@ This license gives permission to share, edit, copy, merge, republish or publish 
 
 ## About the license itself
 
-This license, **'The 0810 simple and permissive license [open version]'** has been created by [Marnix B](https://github.com/Marnix0810), this license can be used freely for your own project, but without any warranty or backup from Marnix B.
+This license, **'The 0810 simple and permissive license [open version]'** has been created by [MarlèneB](https://github.com/that_one_mar), this license can be used freely for your own project, but without any warranty or backup from MarlèneB.
