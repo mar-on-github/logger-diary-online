@@ -1,6 +1,6 @@
 {
-  "name": "logger-diary-frontend",
-  "version": "1.0.0",
+  "name": "logger-diary",
+  "version": "0.0.1",
   "description": "An easy-to-use diary program.",
   "main": "main.js",
   "scripts": {
@@ -9,11 +9,12 @@
     "package-win": "electron-packager . electron-tutorial-app --overwrite --no-asar --platform=win32 --arch=ia32 --icon=icons/logo.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
     "package-linux": "electron-packager . electron-tutorial-app --overwrite --no-asar --platform=linux --arch=x64 --icon=icons/logo.png --prune=true --out=release-builds"
   },
-  "repository": "",
-  "author": "M Bloeiman",
-  "license": "ISC",
+  "repository": "https://github.com/mar-on-github/logger-diary/",
+  "author": "MLC Bloeiman",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^18.2.4",
-    "electron-packager": "^15.5.1"
+    "electron-packager": "^15.5.1",
+    "php-server-manager": "^1.2.1"
   }
 }
