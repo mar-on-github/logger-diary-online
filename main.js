@@ -95,7 +95,7 @@ mainWindow.loadURL(url.format({
 }))
 */
  const {shell} = require('electron')
- shell.showItemInFolder('fullPath')
+//  shell.showItemInFolder('fullPath')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -161,7 +161,6 @@ function createWindow() {
     
 
     const { shell } = require("electron");
-    shell.showItemInFolder("fullPath");
 
     // Emitted when the window is closed.
     mainWindow.on("closed", function () {
