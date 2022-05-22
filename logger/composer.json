@@ -1,0 +1,17 @@
+{
+    "name": "mar/logger-diary-backwork",
+    "type": "project",
+    "license": "MIT",
+    "readme": "../readme.md",
+    "repositories": {
+        "https://github.com/mar-on-github/logger-diary/":false
+    },
+    "authors": [
+        {
+            "name": "Mar",
+            "email": "101558380+mar-on-github@users.noreply.github.com",
+            "homepage": "https://storiesbymar.nl/link-in-bio/"
+        }
+    ],
+    "require": {}
+}
