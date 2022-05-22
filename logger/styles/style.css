@@ -41,3 +41,6 @@ h4 {
 .AddEntryForm input[type=text] {
     width: 80%;
 }
+.infofooter {
+    bottom: 0px;
+}
