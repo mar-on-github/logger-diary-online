@@ -1,0 +1,43 @@
+/* Styles loaded for the main stylesheet. These won't change on theme change. */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body {
+    margin: 0;
+    padding: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    resize: both;
+    overflow: auto;
+    font-size: 14px;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+.AddEntryForm {
+    align-self: center;
+    border: 10px solid;
+    border-radius: 20px;
+    align-items: center;
+    width: 90%;
+    align-content: center;
+}
+.AddEntryForm input {
+    display: table-column-group;
+    align-self: center;
+    align-items: center;
+    border: 0px;
+    margin: 5px;
+}
+.AddEntryForm input[type=submit] {
+    width: 10%;
+}
+.AddEntryForm input[type=text] {
+    width: 80%;
+}

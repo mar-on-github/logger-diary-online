@@ -1,0 +1,8 @@
+/* Styles for the Taupe (default) stylesheet */
+body {
+        background-color: #868680;
+}
+.AddEntryForm {
+        background-color: #ffa500;
+        border-color: #ffe4c4;
+}
