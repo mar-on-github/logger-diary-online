@@ -156,7 +156,7 @@ function createWindow() {
             server.host +
             ":" +
             server.port +
-            "/back/index.php"
+            "/logger/served/index.php"
     );
     
 
