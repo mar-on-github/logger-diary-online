@@ -1,7 +1,7 @@
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
-// Module for mennu
+// Module for menu
 const Menu = electron.Menu
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
@@ -58,7 +58,7 @@ app.on('ready', () => {
     Menu.setApplicationMenu(osxMenu);
   }
 })
-
+new Menu() 
 // PHP SERVER CREATION /////
 const PHPServer = require('php-server-manager');
 
@@ -135,7 +135,7 @@ app.on('activate', function () {
   }
 })
 
-
+require('electron').Menu.setApplicationMenu(null);
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
