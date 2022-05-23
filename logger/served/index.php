@@ -4,7 +4,7 @@
 // -------------------------------------
 // Functions
 
-function SaveSettings($Setting,$Value)
+function SaveSettings($Setting, $Value)
 {
     if (!file_exists(GetSaveFolder() . "/config/")) {
         mkdir(GetSaveFolder() . "/config/", 0777, true);
@@ -127,9 +127,16 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
     <div class="AddEntryForm">
         <form action="/add" method="post" style="align-self: center;">
             <input type="text" name="new_entry" required><select name="new_entry_feel">
-                <option value="😀" selected>😀</option>
-                <option value="🤯">🤯</option>
-
+                <option selected>😀</option>
+                <option>🤯</option>
+                <option>🤯</option>
+                <option>🤯</option>
+                <option>🤯</option>
+                <option>🤯</option>
+                <option>🤯</option>
+                <option>🤯</option>
+                <option>🤯</option>
+                <option>🤯</option>
             </select><input type="submit" value="Write down">
         </form>
     </div>
@@ -144,26 +151,26 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
             <?php
             $entriesfile = GetSaveFolder() . "/entries";
             if (file_exists($entriesfile)) {
-            $loggies = file($entriesfile);
-            foreach ($loggies as $DirtyEntryID) {
-                $EntryID = preg_replace(
-                    "/(\t|\n|\v|\f|\r| |\xC2\x85|\xc2\xa0|\xe1\xa0\x8e|\xe2\x80[\x80-\x8D]|\xe2\x80\xa8|\xe2\x80\xa9|\xe2\x80\xaF|\xe2\x81\x9f|\xe2\x81\xa0|\xe3\x80\x80|\xef\xbb\xbf)+/",
-                    "",
-                    $DirtyEntryID
-                );
-                echo "<tr>\n";
-                echo "<td class=\"readback entry-date\">" . RetrieveEntryData($EntryID, "Date") . "</td>\n";
-                echo "<td class=\"readback entry-text\">" . RetrieveEntryData($EntryID, "Text") . "</td>\n";
-                echo "<td class=\"readback entry-feel\">" . RetrieveEntryData($EntryID, "Feel") . "</td>\n";
-                echo "</tr>\n";
-            }
+                $loggies = file($entriesfile);
+                foreach ($loggies as $DirtyEntryID) {
+                    $EntryID = preg_replace(
+                        "/(\t|\n|\v|\f|\r| |\xC2\x85|\xc2\xa0|\xe1\xa0\x8e|\xe2\x80[\x80-\x8D]|\xe2\x80\xa8|\xe2\x80\xa9|\xe2\x80\xaF|\xe2\x81\x9f|\xe2\x81\xa0|\xe3\x80\x80|\xef\xbb\xbf)+/",
+                        "",
+                        $DirtyEntryID
+                    );
+                    echo "<tr>\n";
+                    echo "<td class=\"readback entry-date\">" . RetrieveEntryData($EntryID, "Date") . "</td>\n";
+                    echo "<td class=\"readback entry-text\">" . RetrieveEntryData($EntryID, "Text") . "</td>\n";
+                    echo "<td class=\"readback entry-feel\">" . RetrieveEntryData($EntryID, "Feel") . "</td>\n";
+                    echo "</tr>\n";
+                }
             ?>
         </table>
-        <?php
-            } ELSE {
+    <?php
+            } else {
                 echo "</table> Nothing logged yet!";
             }
-            ?>
+    ?>
     </div>
     <footer class="infofooter">
         <p><?php echo "Files are saved in: '" . GetSaveFolder() . "'. Currently used theme: '" . RetrieveSettings('set_theme') . "'. Last update: <b>may 22th '22.</b>"; ?> </p>
