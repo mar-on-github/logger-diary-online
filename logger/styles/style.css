@@ -7,6 +7,8 @@ body {
     resize: both;
     overflow: auto;
     font-size: 14px;
+    height: 100%;
+    width: 90%;
 }
 h1 {
     text-align: center;
@@ -20,15 +22,23 @@ h3 {
 h4 {
     text-align: center;
 }
-.AddEntryForm {
+div.AddEntryForm {
+    align-items: center;
+    align-content: center;
+    width: 95%;
     align-self: center;
     border: 10px solid;
     border-radius: 20px;
-    align-items: center;
-    width: 90%;
-    align-content: center;
+    margin: 40px;
 }
 .AddEntryForm input {
+    display: table-column-group;
+    align-self: center;
+    align-items: center;
+    border: 0px;
+    margin: 5px;
+}
+.AddEntryForm select {
     display: table-column-group;
     align-self: center;
     align-items: center;
@@ -42,5 +52,50 @@ h4 {
     width: 80%;
 }
 .infofooter {
-    bottom: 0px;
+    bottom:0%;
+}
+div.readback { 
+    border: 15px solid;
+    border-radius: 15px;
+    margin-top: 70px;
+    overflow-x: auto;
+    padding: 0%;
+    width: 95%;
+    align-self: center;
+    align-items: center;
+    margin: 40px;
+}
+#readbacktable {
+    border-collapse: collapse;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+#readbacktable td,
+#readbacktable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#readbacktable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#readbacktable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+.entry-feel {
+    max-width: 30px;
+}
+.entry-date {
+    width: 20%;
+}
+.entry-text {
+    width: 70%;
 }

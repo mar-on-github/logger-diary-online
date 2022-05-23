@@ -1,8 +1,16 @@
 /* Styles for the Taupe (default) stylesheet */
 body {
-        background-color: #868680;
+        background-color: #766045;
+        color: #d7ffff;
 }
-.AddEntryForm {
+div.AddEntryForm, div.readback {
         background-color: #ffa500;
-        border-color: #ffe4c4;
+        border-color: #f7bd76;
+}
+#readbacktable {
+        background-color: #fff8dc;
+}
+#readbacktable td {
+        background-color: #aa9404;
+        color: #ffffff;
 }
