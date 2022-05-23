@@ -14,3 +14,17 @@ div.AddEntryForm, div.readback {
         background-color: #aa9404;
         color: #ffffff;
 }
+.highnavbar a.active {
+        background-color: #04AA6D;
+        color: white;
+}
+.highnavbar a:hover {
+        background-color: #ddd;
+        color: black;
+}
+.highnavbar a {
+        color: #f2f2f2;
+}
+.highnavbar {
+        background-color: #333;
+}
