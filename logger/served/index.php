@@ -129,14 +129,20 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
             <input type="text" name="new_entry" required><select name="new_entry_feel">
                 <option selected>😀</option>
                 <option>🤯</option>
-                <option>🤯</option>
-                <option>🤯</option>
-                <option>🤯</option>
-                <option>🤯</option>
-                <option>🤯</option>
-                <option>🤯</option>
-                <option>🤯</option>
-                <option>🤯</option>
+                <option>😢</option>
+                <option>😊</option>
+                <option>😕</option>
+                <option>😑</option>
+                <option>😱</option>
+                <option>😮‍💨</option>
+                <option>😮</option>
+                <option>🤪</option>
+                <option>🤬</option>
+                <option>🤮</option>
+                <option>😡</option>
+                <option>😇</option>
+                <option>👿</option>
+                <option>😝</option>
             </select><input type="submit" value="Write down">
         </form>
     </div>
