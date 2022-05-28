@@ -2,3 +2,5 @@
 node_modules
 package-lock.json
 release-builds
+logger/composer.lock
+logger/vendor

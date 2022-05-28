@@ -13,5 +13,7 @@
             "homepage": "https://storiesbymar.nl/link-in-bio/"
         }
     ],
-    "require": {}
+    "require": {
+        "erusev/parsedown": "^1.7"
+    }
 }
