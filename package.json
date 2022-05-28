@@ -1,9 +1,10 @@
 {
   "name": "logger-diary",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An easy-to-use diary program.",
   "main": "main.js",
   "homepage": "https://mar-on-github.github.io/logger-diary/",
+  "funding": "https://www.buymeacoffee.com/JustMarOK",
   "scripts": {
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --no-asar --icon=icons/logo.icns --prune=true --out=release-builds",
@@ -20,7 +21,9 @@
   "devDependencies": {
     "electron": "^18.2.4",
     "electron-packager": "^15.5.1",
-    "php-server-manager": "^1.2.1",
+    "php-server-manager": "^1.2.1"
+  },
+  "optionalDevDependencies": {
     "electron-installer-debian": "^3.0.0"
   }
 }
