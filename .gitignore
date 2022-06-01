@@ -5,3 +5,5 @@ release-builds
 logger/composer.lock
 logger/vendor
 php/temp
+# Inno setup doesn't allow me to change the outfile
+Output
