@@ -61,8 +61,21 @@ app.on('ready', () => {
 new Menu() 
 // PHP SERVER CREATION /////
 const PHPServer = require('php-server-manager');
+let server
+  if (process.platform === 'win32') {
 
-const server = new PHPServer({
+server = new PHPServer({
+    php: `${__dirname}/.php/php.exe`,
+    port: 5555,
+    directory: __dirname,
+    directives: {
+        display_errors: 1,
+        expose_php: 1
+    }
+    });
+  } else {
+
+server = new PHPServer({
   
     port: 5555,
     directory: __dirname,
@@ -71,6 +84,7 @@ const server = new PHPServer({
         expose_php: 1
     }
 });
+};
 
 //////////////////////////
 
@@ -135,10 +149,10 @@ app.on('activate', function () {
   }
 })
 
-require('electron').Menu.setApplicationMenu(null);
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+require('electron').Menu.setApplicationMenu(null);
 function createWindow() {
     server.run();
     
