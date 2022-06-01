@@ -65,7 +65,7 @@ let server
   if (process.platform === 'win32') {
 
 server = new PHPServer({
-    php: `${__dirname}/.php/runphp.cmd`,
+    php: `${__dirname}/php/runphp.cmd`,
     port: 5555,
     directory: __dirname,
     directives: {

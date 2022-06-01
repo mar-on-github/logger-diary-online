@@ -4,4 +4,4 @@ package-lock.json
 release-builds
 logger/composer.lock
 logger/vendor
-.php/temp
+php/temp
