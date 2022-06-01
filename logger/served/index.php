@@ -125,8 +125,8 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
     <div id="theLoggerNav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="doHideNav()">&times;</a>
         <a href="http://from-mar.com" target="_new">About author</a>
-        <a href="https://github.com/mar-on-github/logger-diary/issues/new/choose">Report...</a>
-        <a href="https://github.com/mar-on-github/logger-diary"><img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"> Visit the GitHub repo</a>
+        <a href="https://github.com/mar-on-github/logger-diary/issues/new/choose" target="_new">Report...</a>
+        <a href="https://github.com/mar-on-github/logger-diary" target="_new"><img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"> Visit the GitHub repo</a>
     </div>
     <div id="main">
         <span onclick="doViewNav()"><button style="border-color: #000000; border-radius: 20; background-color:aquamarine; font-size: 20px">&#9776;</button></span>
