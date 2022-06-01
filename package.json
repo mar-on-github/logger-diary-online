@@ -8,7 +8,7 @@
   "scripts": {
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --no-asar --icon=icons/logo.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . Logger-Diary --overwrite --no-asar --platform=win32 --arch=x64 --icon=icons/logo.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Logger-Diary\"",
+    "package-win": "electron-packager . Logger-Diary --overwrite --no-asar --platform=win32 --arch=x64 --icon=icons/logo.ico --prune=true --out=release-builds --version-string.CompanyName=\"MLC Bloeiman\" --version-string.FileDescription=CE --version-string.ProductName=\"Logger-Diary\"",
     "prepackage-linux": "electron-packager . Logger-Diary --overwrite --executableName=logger-diary --no-asar --platform=linux --arch=x64 --icon=icons/logo.png --prune=true --out=release-builds",
     "package-deb64": "electron-installer-debian --src release-builds/Logger-Diary-linux-x64/ --dest release-builds/installers/ --arch amd64"
   },
