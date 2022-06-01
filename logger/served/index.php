@@ -122,63 +122,83 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
 </head>
 
 <body>
-    <h1>Logger</h1>
-    <h4>By Mar Bloeiman</h4>
-    <div class="AddEntryForm">
-        <form action="/add" method="post" style="align-self: center;">
-            <input type="text" name="new_entry" required><select name="new_entry_feel">
-                <option selected>😀</option>
-                <option>🤯</option>
-                <option>😢</option>
-                <option>😊</option>
-                <option>😕</option>
-                <option>😑</option>
-                <option>😱</option>
-                <option>😮‍💨</option>
-                <option>😮</option>
-                <option>🤪</option>
-                <option>🤬</option>
-                <option>🤮</option>
-                <option>😡</option>
-                <option>😇</option>
-                <option>👿</option>
-                <option>😝</option>
-            </select><input type="submit" value="Write down">
-        </form>
+    <div id="theLoggerNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="doHideNav()">&times;</a>
+        <a href="http://from-mar.com" target="_new">About author</a>
+        <a href="https://github.com/mar-on-github/logger-diary/issues/new/choose">Report...</a>
+        <a href="https://github.com/mar-on-github/logger-diary"><img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"> Visit the GitHub repo</a>
     </div>
-    <h2>Your past entries</h2>
-    <div class="readback" align="center">
-        <table id="readbacktable" class="readback" align="center">
-            <tr>
-                <th>When</th>
-                <th>What you wrote</th>
-                <th>How you felt</th>
-            </tr>
-            <?php
-            $entriesfile = GetSaveFolder() . "/entries";
-            if (file_exists($entriesfile)) {
-                $loggies = file($entriesfile);
-                foreach ($loggies as $DirtyEntryID) {
-                    $EntryID = preg_replace(
-                        "/(\t|\n|\v|\f|\r| |\xC2\x85|\xc2\xa0|\xe1\xa0\x8e|\xe2\x80[\x80-\x8D]|\xe2\x80\xa8|\xe2\x80\xa9|\xe2\x80\xaF|\xe2\x81\x9f|\xe2\x81\xa0|\xe3\x80\x80|\xef\xbb\xbf)+/",
-                        "",
-                        $DirtyEntryID
-                    );
-                    echo "<tr>\n";
-                    echo "<td class=\"readback entry-date\">" . RetrieveEntryData($EntryID, "Date") . "</td>\n";
-                    echo "<td class=\"readback entry-text\">" . RetrieveEntryData($EntryID, "Text") . "</td>\n";
-                    echo "<td class=\"readback entry-feel\">" . RetrieveEntryData($EntryID, "Feel") . "</td>\n";
-                    echo "</tr>\n";
+    <div id="main">
+        <span onclick="doViewNav()"><button style="border-color: #000000; border-radius: 20; background-color:aquamarine; font-size: 20px">&#9776;</button></span>
+        <h1>Logger</h1>
+        <h4>By Mar Bloeiman</h4>
+        <div class="AddEntryForm">
+            <form action="/add" method="post" style="align-self: center;">
+                <input type="text" name="new_entry" required><select name="new_entry_feel">
+                    <option selected>😀</option>
+                    <option>🤯</option>
+                    <option>😢</option>
+                    <option>😊</option>
+                    <option>😕</option>
+                    <option>😑</option>
+                    <option>😱</option>
+                    <option>😮‍💨</option>
+                    <option>😮</option>
+                    <option>🤪</option>
+                    <option>🤬</option>
+                    <option>🤮</option>
+                    <option>😡</option>
+                    <option>😇</option>
+                    <option>👿</option>
+                    <option>😝</option>
+                </select><input type="submit" value="Write down">
+            </form>
+        </div>
+        <h2>Your past entries</h2>
+        <div class="readback" align="center">
+            <table id="readbacktable" class="readback" align="center">
+                <tr>
+                    <th>When</th>
+                    <th>What you wrote</th>
+                    <th>How you felt</th>
+                </tr>
+                <?php
+                $entriesfile = GetSaveFolder() . "/entries";
+                if (file_exists($entriesfile)) {
+                    $loggies = file($entriesfile);
+                    foreach ($loggies as $DirtyEntryID) {
+                        $EntryID = preg_replace(
+                            "/(\t|\n|\v|\f|\r| |\xC2\x85|\xc2\xa0|\xe1\xa0\x8e|\xe2\x80[\x80-\x8D]|\xe2\x80\xa8|\xe2\x80\xa9|\xe2\x80\xaF|\xe2\x81\x9f|\xe2\x81\xa0|\xe3\x80\x80|\xef\xbb\xbf)+/",
+                            "",
+                            $DirtyEntryID
+                        );
+                        echo "<tr>\n";
+                        echo "<td class=\"readback entry-date\">" . RetrieveEntryData($EntryID, "Date") . "</td>\n";
+                        echo "<td class=\"readback entry-text\">" . RetrieveEntryData($EntryID, "Text") . "</td>\n";
+                        echo "<td class=\"readback entry-feel\">" . RetrieveEntryData($EntryID, "Feel") . "</td>\n";
+                        echo "</tr>\n";
+                    }
+                ?>
+            </table>
+        <?php
+                } else {
+                    echo "</table> Nothing logged yet!";
                 }
-            ?>
-        </table>
-    <?php
-            } else {
-                echo "</table> Nothing logged yet!";
-            }
-    ?>
+        ?>
+        </div>
+        <footer class="infofooter">
+            <p><?php echo "Files are saved in: '" . GetSaveFolder() . "'. Currently used theme: '" . RetrieveSettings('set_theme') . "'. Last update: <b>may 28th '22.</b>"; ?> </p>
+        </footer>
     </div>
-    <footer class="infofooter">
-        <p><?php echo "Files are saved in: '" . GetSaveFolder() . "'. Currently used theme: '" . RetrieveSettings('set_theme') . "'. Last update: <b>may 22th '22.</b>"; ?> </p>
-    </footer>
+    <script>
+        function doViewNav() {
+            document.getElementById("theLoggerNav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function doHideNav() {
+            document.getElementById("theLoggerNav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
 </body>
