@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Logger Diary"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.0.0.8"
 #define MyAppPublisher "MLC Bloeiman"
 #define MyAppURL "https://mar-on-github.github.io/logger-diary/"
 #define MyAppExeName "Logger-Diary.exe"
@@ -20,10 +20,10 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=D:\justm\GitHub\logger-diary\LICENSE.TXT
+LicenseFile=D:\justm\GitHub\logger-diary\full-license.rtf
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
-PrivilegesRequiredOverridesAllowed=dialog
+PrivilegesRequired=lowest
+;PrivilegesRequiredOverridesAllowed=dialog
 SetupIconFile=D:\justm\GitHub\logger-diary\icons\logo.ico
 Compression=lzma
 SolidCompression=yes
