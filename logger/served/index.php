@@ -22,16 +22,31 @@ function RetrieveSettings($Setting)
     }
     return $Value;
 }
-function GetSaveFolder()
-{
+function GetSaveFolder(){
     $homefolder = getenv("HOME");
-    $SaveFolder = $homefolder . "/.logger-diary";
+    if (strcasecmp(substr(PHP_OS, 0, 3), 'WIN') == 0) {
+    $homefolder = exec('cmd.exe /c echo %appdata%');
+    }
+    $SaveFolder = get_absolute_path($homefolder . "/.logger-diary/");
     if (!file_exists($SaveFolder)) {
         mkdir($SaveFolder, 0777, true);
     }
     return $SaveFolder;
 }
-
+function get_absolute_path($path){
+    $path = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $path);
+    $parts = array_filter(explode(DIRECTORY_SEPARATOR, $path), 'strlen');
+    $absolutes = array();
+    foreach ($parts as $part) {
+        if ('.' == $part) continue;
+        if ('..' == $part) {
+            array_pop($absolutes);
+        } else {
+            $absolutes[] = $part;
+        }
+    }
+    return implode(DIRECTORY_SEPARATOR, $absolutes);
+}
 function AddEntry(STRING $Entry, STRING $Feel)
 {
     $filename = GetSaveFolder() . "/entries";
