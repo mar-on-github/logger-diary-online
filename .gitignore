@@ -2,8 +2,8 @@
 node_modules
 package-lock.json
 release-builds
-logger/composer.lock
-logger/vendor
+source/composer.lock
+source/vendor
 php/temp
 # Inno setup doesn't allow me to change the outfile
 Output

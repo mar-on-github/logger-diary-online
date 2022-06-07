@@ -170,7 +170,7 @@ function createWindow() {
             server.host +
             ":" +
             server.port +
-            "/logger/served/index.php"
+            "/source/served/index.php"
     );
     
 
