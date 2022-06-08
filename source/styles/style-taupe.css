@@ -23,3 +23,6 @@ div.AddEntryForm, div.readback {
 .sidenav {
         background-color: rgb(255, 255, 115);
 }
+.entry-text {
+        color:cadetblue;
+}

@@ -1,8 +1,29 @@
 <?php
-// require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 // -------------------------------------
 // Functions
+function CheckForUpdates()
+{
+    $uptodate = false;
+    if (GetLoggerVer('local') == GetLoggerVer('latest')) {
+        $uptodate = true;
+    }
+    return $uptodate;
+}
+function GetLoggerVer(STRING $which = 'local' | 'localf' | 'latest')
+{
+    if ($which === 'local') {
+        return "1.0.2";
+    }
+
+    if ($which === 'localf') {
+        return "1.0.2.10";
+    }
+    if ($which === 'latest') {
+        return file_get_contents('http://api.from-mar.com/logger-diary.php?wants=lv.r');
+    }
+}
 
 function SaveSettings($Setting, $Value)
 {
@@ -22,10 +43,11 @@ function RetrieveSettings($Setting)
     }
     return $Value;
 }
-function GetSaveFolder(){
+function GetSaveFolder()
+{
     $homefolder = getenv("HOME");
     if (strcasecmp(substr(PHP_OS, 0, 3), 'WIN') == 0) {
-    $homefolder = exec('cmd.exe /c echo %appdata%');
+        $homefolder = exec('cmd.exe /c echo %appdata%');
     }
     $SaveFolder = get_absolute_path($homefolder . "/.logger-diary/");
     if (!file_exists($SaveFolder)) {
@@ -33,7 +55,8 @@ function GetSaveFolder(){
     }
     return $SaveFolder;
 }
-function get_absolute_path($path){
+function get_absolute_path($path)
+{
     $path = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $path);
     $parts = array_filter(explode(DIRECTORY_SEPARATOR, $path), 'strlen');
     $absolutes = array();
@@ -139,14 +162,26 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
 <body>
     <div id="theLoggerNav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="doHideNav()">&times;</a>
-        <a href="http://from-mar.com" target="_new">About author</a>
-        <a href="https://github.com/mar-on-github/logger-diary/issues/new/choose" target="_new">Report...</a>
-        <a href="https://github.com/mar-on-github/logger-diary" target="_new"><img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"> Visit the GitHub repo</a>
+        <a href="javascript:window.close()">Exit logger</a>
+        <a href="javascript:void(0)" id="mmlt" style="display: block;" onclick="moreLinks()">➕ more...</a>
+        <div style="display: none;" id="menumorelinks">
+            <?php
+            echo file_get_contents('http://api.from-mar.com/logger-diary.php?wants=links.more');
+            ?>
+            <a href="javascript:void(0)" onclick="lessLinks()">➖ less</a>
+        </div>
+
+
     </div>
     <div id="main">
-        <span onclick="doViewNav()"><button style="border-color: #000000; border-radius: 20; background-color:aquamarine; font-size: 20px">&#9776;</button></span>
+        <span onclick="doViewNav()"><button style="border-color: #000000; border-radius: 20; background-color:aquamarine; font-size: 20px; display: block;" id="ViewNavButton">&#9776;</button></span>
         <h1>Logger</h1>
         <h4>By Mar Bloeiman</h4>
+        <?php
+        if (CheckForUpdates() === false) {
+            echo "<p style=\"Background-color: yellow; Border-radius: 10px; Color: #000058; Text-align: center;\">Oh! A newer logger version is available: " . GetLoggerVer('latest') . ". <a href=\"https://github.com/mar-on-github/logger-diary/releases/latest\" target=\"_blank\">Download it now.</a></p>";
+        }
+        ?>
         <div class="AddEntryForm">
             <form action="/add" method="post" style="align-self: center;">
                 <input type="text" name="new_entry" required><select name="new_entry_feel">
@@ -188,8 +223,9 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
                             $DirtyEntryID
                         );
                         echo "<tr>\n";
+                        $Parsedown = new Parsedown();
                         echo "<td class=\"readback entry-date\">" . RetrieveEntryData($EntryID, "Date") . "</td>\n";
-                        echo "<td class=\"readback entry-text\">" . RetrieveEntryData($EntryID, "Text") . "</td>\n";
+                        echo "<td class=\"readback entry-text\">" . $Parsedown->line(RetrieveEntryData($EntryID, "Text")) . "</td>\n";
                         echo "<td class=\"readback entry-feel\">" . RetrieveEntryData($EntryID, "Feel") . "</td>\n";
                         echo "</tr>\n";
                     }
@@ -202,18 +238,31 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
         ?>
         </div>
         <footer class="infofooter">
-            <p><?php echo "Files are saved in: '" . GetSaveFolder() . "'. Currently used theme: '" . RetrieveSettings('set_theme') . "'. Last update: <b>may 28th '22.</b>"; ?> </p>
+            <p><?php echo "Files are saved in: '" . GetSaveFolder() . "'. Currently used theme: '" . RetrieveSettings('set_theme') . "'. Using Logger version: <b>" . GetLoggerVer('local') . "</b>"; ?> </p>
         </footer>
     </div>
     <script>
         function doViewNav() {
             document.getElementById("theLoggerNav").style.width = "250px";
             document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("ViewNavButton").style.display = "none";
         }
 
         function doHideNav() {
             document.getElementById("theLoggerNav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("ViewNavButton").style.display = "block";
+        }
+
+        function moreLinks() {
+            document.getElementById("menumorelinks").style.display = "block";
+            // mmlt: menu more links trigger
+            document.getElementById("mmlt").style.display = "none";
+        }
+
+        function lessLinks() {
+            document.getElementById("menumorelinks").style.display = "none";
+            document.getElementById("mmlt").style.display = "block";
         }
     </script>
 </body>
