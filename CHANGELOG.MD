@@ -1,8 +1,16 @@
 # <u>v.1.0.2.0</u>
 _Released as v.1.0.2_
+## About
+### Added
+- > `[ALL]` Markdown support:
+![](./docs/images/markdown-1.png "Typing markdown...")
+![](./docs/images/markdown-2.png "...The markdown is shown!")
+- > `[ALL]` Update checker now added!
+![](./docs/images/updatechecker1.png "...An update available.")
 
-Fixing the bugs from earlier versions, while also being careful with the existing stability.
-Sadly, it is not a huge update, though. Just a minor release.
+### Fixed
+- > `[Windows]` Fixing the app data being stored on the root of the harddrive, causing all users to use the same logs.
+
 
 ## Commits since **v1.0.0**
 
