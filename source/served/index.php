@@ -129,6 +129,7 @@ if ($_SERVER['REQUEST_URI'] === '/js') {
 ?>
 
 <?php
+    die;
 }
 if ($_SERVER['REQUEST_URI'] === '/logo') {
     header('Content-type: image/png');
@@ -147,6 +148,10 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
     AddEntry($_POST['new_entry'], $_POST['new_entry_feel']);
     header("Location: /");
 }
+if ($_SERVER['REQUEST_URI'] === '/settings') {
+    include(__DIR__ . "/pages/settings.php");
+    die;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -162,7 +167,8 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
 <body>
     <div id="theLoggerNav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="doHideNav()">&times;</a>
-        <a href="javascript:window.close()">Exit logger</a>
+        <a href="/settings">Settings...</a>
+        <a href="javascript:window.close()">Exit Logger</a>
         <a href="javascript:void(0)" id="mmlt" style="display: block;" onclick="moreLinks()">➕ more...</a>
         <div style="display: none;" id="menumorelinks">
             <?php
@@ -175,13 +181,14 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
     </div>
     <div id="main">
         <span onclick="doViewNav()"><button style="border-color: #000000; border-radius: 20; background-color:aquamarine; font-size: 20px; display: block;" id="ViewNavButton">&#9776;</button></span>
-        <h1>Logger</h1>
+        <h1>Logger, the simple digital diary.</h1>
         <h4>By Mar Bloeiman</h4>
         <?php
         if (CheckForUpdates() === false) {
             echo "<p style=\"Background-color: yellow; Border-radius: 10px; Color: #000058; Text-align: center;\">Oh! A newer logger version is available: " . GetLoggerVer('latest') . ". <a href=\"https://github.com/mar-on-github/logger-diary/releases/latest\" target=\"_blank\">Download it now.</a></p>";
         }
         ?>
+        <h2>Want to let something out?</h2>
         <div class="AddEntryForm">
             <form action="/add" method="post" style="align-self: center;">
                 <input type="text" name="new_entry" required><select name="new_entry_feel">
