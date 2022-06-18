@@ -1,3 +1,36 @@
+# <u>v.1.1.0.0</u> planned: 22/6/22
+_Released as v.1.1.0_
+## About
+Finally! A theme switcher! I lived up to my promise!
+### Added
+- > `[ALL]` Settings screen with theme switcher
+
+
+## Commits since last released version
+
+<https://github.com/mar-on-github/logger-diary/compare/v1.1.0.0...v1.0.2.0>
+
+
+
+## Windows
+> :white_check_mark: Tested on `Windows 11 21H2 ×64`
+
+
+
+## Linux
+> :grey_question: Not tested on Linux.
+
+\- No changes for Linux.
+
+
+## MacOS
+> :grey_question: Never tested on MacOS.
+
+\- No changes for MacOS.
+
+
+
+
 # <u>v.1.0.2.0</u>
 _Released as v.1.0.2_
 ## About

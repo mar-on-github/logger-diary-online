@@ -83,11 +83,11 @@ div.readback {
     background-color: #f2f2f2;
 }
 
+
 #readbacktable th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
     color: white;
 }
 .entry-feel {
@@ -223,7 +223,21 @@ div.readback {
 .visualthemeselector {
     size: bigger;
 }
+#setstyles button {
+    border-radius: 25px;
+    width: 40%;
+    background-color: bisque;
+    align-self: center;
+}
 #visual-theme-selector-taupe {
-    background-color: antiquewhite;
+    background-color: #ffa500;
     color:#4B9DEA;
+}
+#visual-theme-selector-rouge {
+    background-color: #3c1c1c;
+    color: #D7707E;
+}
+#visual-theme-selector-jellybean {
+    background-color: #dadada;
+    color: #4f7166;
 }

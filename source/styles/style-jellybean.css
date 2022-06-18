@@ -1,0 +1,32 @@
+/* Styles for the Jelly Bean Blue stylesheet */
+body {
+        background-color: #f1f5fc;
+        color: #448181;
+}
+div.AddEntryForm, div.readback {
+        background-color: #dadada;
+        border-color: #1b199f;
+}
+#readbacktable {
+        background-color: #fff8dc;
+}
+#readbacktable th {
+        background-color: #d6ebf2;
+        color:#4f7166;
+}
+#readbacktable td {
+        background-color: #eeece3;
+        color: #000000;
+}
+.sidenav a:hover {
+        color: #ff0000;
+}
+.sidenav a {
+        color: #1b199f;
+}
+.sidenav {
+        background-color: #f0f0eb;
+}
+.entry-text {
+        color:#5f9ea0;
+}

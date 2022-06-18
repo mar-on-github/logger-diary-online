@@ -14,11 +14,11 @@ function CheckForUpdates()
 function GetLoggerVer(STRING $which = 'local' | 'localf' | 'latest')
 {
     if ($which === 'local') {
-        return "1.0.2";
+        return "1.1.0";
     }
 
     if ($which === 'localf') {
-        return "1.0.2.10";
+        return "1.1.0.0";
     }
     if ($which === 'latest') {
         return file_get_contents('http://api.from-mar.com/logger-diary.php?wants=lv.r');
@@ -96,18 +96,18 @@ function RetrieveEntryData($EntryID, $DataType = "Date" | "Text" | "Feel")
 }
 //  ------------------------------------   < todo: Themes should not be part of the first release, as they slurp up my attention from the base.
 // Setting themes.
-if (isset($_REQUEST['set_theme'])) {
-    if ($_REQUEST['set_theme'] == "light") {
-        SaveSettings("set_theme", "light");
-        header("Location: ./");
+if (isset($_POST['set_theme'])) {
+    if ($_POST['set_theme'] == "jellybean") {
+        SaveSettings("set_theme", "jellybean");
+        header("Location: /settings");
     }
-    if ($_REQUEST['set_theme'] == "dark") {
-        SaveSettings("set_theme", "dark");
-        header("Location: ./");
+    if ($_POST['set_theme'] == "rouge") {
+        SaveSettings("set_theme", "rouge");
+        header("Location: /settings");
     }
-    if ($_REQUEST['set_theme'] == "taupe") {
+    if ($_POST['set_theme'] == "taupe") {
         SaveSettings("set_theme", "taupe");
-        header("Location: ./");
+        header("Location: /settings");
     }
 }
 // If no theme is set, and no theme is known, just fall back to taupe theme.
@@ -245,6 +245,7 @@ if ($_SERVER['REQUEST_URI'] === '/settings') {
         ?>
         </div>
         <footer class="infofooter">
+            <hr>
             <p><?php echo "Files are saved in: '" . GetSaveFolder() . "'. Currently used theme: '" . RetrieveSettings('set_theme') . "'. Using Logger version: <b>" . GetLoggerVer('local') . "</b>"; ?> </p>
         </footer>
     </div>

@@ -1,0 +1,31 @@
+/* Styles for the Rouge stylesheet */
+body {
+        background-color: #444444;
+        color: #D7707E;
+}
+div.AddEntryForm, div.readback {
+        background-color: #3c1c1c;
+        border-color: #b2afa3;
+}
+#readbacktable {
+        background-color: #333230;
+}
+#readbacktable th {
+        background-color: #2d0808;
+}
+#readbacktable td {
+        background-color: #464545;
+        color: #b64444;
+}
+.sidenav a:hover {
+        color: #ff0000;
+}
+.sidenav a {
+        color: #e03e3e;
+}
+.sidenav {
+        background-color: #000000;
+}
+.entry-text {
+        color:#5f9ea0;
+}

@@ -38,19 +38,21 @@
             <p style="Text-align: center;">Want to <a href="/">go back</a>?</p>
         </div>
         <div class="readback settingsmain" align="center">
-            <form id="setstyles">
+            <form id="setstyles" action="/" method="POST">
                 <h4>Change Logger theme</h4>
                 <div class="radiotoggle">
-                    <input type="radio" name="sizeBy" value="taupe" id="theme-selector-taupe" />
-                    <label for="theme-selector-taupe" id="visual-theme-selector-taupe"> <img src="/source/img/taupe-preview.gif" width="100%">Taupe</label>
-                    <input type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
-                    <label for="sizeWeight">It's pretty, pretty, pretty, pretty good</label>
-                    <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" />
-                    <label for="sizeDimensions">100% yes</label>
+                    <input type="radio" name="set_theme" value="taupe" id="theme-selector-taupe" />
+                    <label for="theme-selector-taupe" id="visual-theme-selector-taupe"> <img src="/source/img/taupe-preview.gif" width="100%">Taupe (default)</label>
+                    <input type="radio" name="set_theme" value="jellybean" id="theme-selector-jellybean" />
+                    <label for="theme-selector-jellybean" id="visual-theme-selector-jellybean"> <img src="/source/img/jellybean-preview.gif" width="100%">Jelly Bean Blue (light)</label>
+                    <input type="radio" name="set_theme" value="rouge" id="theme-selector-rouge" />
+                    <label for="theme-selector-rouge" id="visual-theme-selector-rouge"> <img src="/source/img/rouge-preview.gif" width="100%">Rouge (dark)</label>
                 </div>
+                <button type="submit">Set theme</button>
             </form>
         </div>
         <footer class="infofooter">
+            <hr>
             <p><?php echo "Files are saved in: '" . GetSaveFolder() . "'. Currently used theme: '" . RetrieveSettings('set_theme') . "'. Using Logger version: <b>" . GetLoggerVer('local') . "</b>"; ?> </p>
         </footer>
     </div>

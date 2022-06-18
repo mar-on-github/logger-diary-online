@@ -10,6 +10,9 @@ div.AddEntryForm, div.readback {
 #readbacktable {
         background-color: #fff8dc;
 }
+#readbacktable th {
+        background-color: #5c5947;
+}
 #readbacktable td {
         background-color: #aa9404;
         color: #ffffff;
