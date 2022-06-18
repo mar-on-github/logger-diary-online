@@ -192,7 +192,10 @@ if ($_SERVER['REQUEST_URI'] === '/settings') {
         <div class="AddEntryForm">
             <form action="/add" method="post" style="align-self: center;">
                 <input type="text" name="new_entry" required><select name="new_entry_feel">
-                    <option selected>😀</option>
+                    <option selected>...</option>
+                    <option>🙂</option>
+                    <option>🙁</option>
+                    <option>😀</option>
                     <option>🤯</option>
                     <option>😢</option>
                     <option>😊</option>
