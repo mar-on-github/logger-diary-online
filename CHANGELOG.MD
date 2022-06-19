@@ -1,3 +1,37 @@
+# v1.1.1 (planned for 25th of june, '22)
+_Full: v1.1.1.1-beta_
+## About
+Finally! A theme switcher! I lived up to my promise!
+### Fixed
+- > `[Windows/ALL]` Time sometimes not being in sync with device time
+
+
+## Commits since last released version
+
+<https://github.com/mar-on-github/logger-diary/compare/v1.1.1.1-beta...v1.1.0.0-beta>
+
+
+
+## Windows
+> :white_check_mark: Tested on `Windows 11 21H2 ×64`
+
+
+
+## Linux
+> :grey_question: Not tested on Linux.
+
+\- No changes for Linux.
+
+
+## MacOS
+> :grey_question: Never tested on MacOS.
+
+\- No changes for MacOS.
+
+
+
+
+
 # v.1.1.0
 _Full: v.1.1.0.0_
 ## About
