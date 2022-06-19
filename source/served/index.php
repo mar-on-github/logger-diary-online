@@ -43,6 +43,14 @@ function RetrieveSettings($Setting)
     }
     return $Value;
 }
+function PythonGetTime() {
+    if (strcasecmp(substr(PHP_OS, 0, 3), 'WIN') == 0) {
+        $timewouldbe = exec("\"". __DIR__ . "\\..\\..\\bin\\python-3.10.5-embed-amd64\\python.exe\" \"" . __DIR__ . "\\..\\scripts\\get_more_accurate_time.py\"");
+} ELSE {
+        $timewouldbe = exec("python \"" . __DIR__ . "/../scripts/get_more_accurate_time.py\"");
+}
+return $timewouldbe;
+}
 function GetSaveFolder()
 {
     $homefolder = getenv("HOME");
@@ -77,7 +85,7 @@ function AddEntry(STRING $Entry, STRING $Feel)
     $EntryID = (md5(date('Y-m-d H:i:s') . rand()));
     file_put_contents($filename, $EntryID . "\n" . $fileContent);
     $EntryData = new stdClass();
-    $EntryData->Date = date('Y-m-d H:i');
+    $EntryData->Date = date('Y-m-d') . " " . PythonGetTime();
     $EntryData->Text = $Entry;
     $EntryData->Feel = $Feel;
     $EntryJson = json_encode($EntryData);
@@ -161,7 +169,7 @@ if ($_SERVER['REQUEST_URI'] === '/settings') {
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/logo" />
     <link rel="stylesheet" href="/style" content-type="text/css" charset="utf-8" />
-    <title>Logger Diary - <?php echo date('Y-m-d H:i'); ?></title>
+    <title>Logger Diary - <?php echo date('Y-m-d') . " " . PythonGetTime(); ?></title>
 </head>
 
 <body>

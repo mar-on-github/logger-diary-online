@@ -65,7 +65,7 @@ let server
   if (process.platform === 'win32') {
 
 server = new PHPServer({
-    php: `${__dirname}/php/php.exe`,
+    php: `${__dirname}/bin/php/php.exe`,
     port: 5555,
     directory: __dirname,
     directives: {
