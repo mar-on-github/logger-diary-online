@@ -1,6 +1,7 @@
-# <u>v.1.1.0.0</u> planned: 22/6/22
-_Released as v.1.1.0_
+# v.1.1.0
+_Full: v.1.1.0.0_
 ## About
+(Added beta to tag because Logger, is in fact not 100% finished!)
 Finally! A theme switcher! I lived up to my promise!
 ### Added
 - > `[ALL]` Settings screen with theme switcher
@@ -8,7 +9,7 @@ Finally! A theme switcher! I lived up to my promise!
 
 ## Commits since last released version
 
-<https://github.com/mar-on-github/logger-diary/compare/v1.1.0.0...v1.0.2.0>
+<https://github.com/mar-on-github/logger-diary/compare/v1.1.0.0-beta...v1.0.2.0>
 
 
 
