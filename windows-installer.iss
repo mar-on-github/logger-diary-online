@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Logger Diary"
-#define MyAppVersion "1.0.2.0"
+#define MyAppVersion "1.1.0.0"
 #define MyAppPublisher "MLC Bloeiman"
 #define MyAppURL "https://mar-on-github.github.io/logger-diary/"
 #define MyAppExeName "Logger-Diary.exe"
