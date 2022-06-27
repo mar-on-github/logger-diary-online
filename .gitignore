@@ -3,3 +3,5 @@ source/composer.lock
 source/vendor
 php/temp
 /.vs/
+
+/vendor/

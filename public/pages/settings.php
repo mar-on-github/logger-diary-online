@@ -16,9 +16,7 @@
         <a href="javascript:window.close()">Exit Logger</a>
         <a href="javascript:void(0)" id="mmlt" style="display: block;" onclick="moreLinks()">➕ more...</a>
         <div style="display: none;" id="menumorelinks">
-            <?php
-            echo file_get_contents('http://api.from-mar.com/logger-diary.php?wants=links.more');
-            ?>
+            
             <a href="javascript:void(0)" onclick="lessLinks()">➖ less</a>
         </div>
 

@@ -13,16 +13,7 @@ function CheckForUpdates()
 }
 function GetLoggerVer(STRING $which = 'local' | 'localf' | 'latest')
 {
-    if ($which === 'local') {
-        return "1.1.0";
-    }
-
-    if ($which === 'localf') {
-        return "1.1.0.0";
-    }
-    if ($which === 'latest') {
-        return file_get_contents('http://api.from-mar.com/logger-diary.php?wants=lv.r');
-    }
+ return "web";
 }
 
 function SaveSettings($Setting, $Value)
@@ -44,11 +35,7 @@ function RetrieveSettings($Setting)
     return $Value;
 }
 function PythonGetTime() {
-    if (strcasecmp(substr(PHP_OS, 0, 3), 'WIN') == 0) {
-        $timewouldbe = exec("\"". __DIR__ . "\\..\\..\\bin\\python-3.10.5-embed-amd64\\python.exe\" \"" . __DIR__ . "\\..\\scripts\\get_more_accurate_time.py\"");
-} ELSE {
         $timewouldbe = exec("python \"" . __DIR__ . "/../scripts/get_more_accurate_time.py\"");
-}
 return $timewouldbe;
 }
 function GetSaveFolder()
@@ -156,6 +143,7 @@ if ($_SERVER['REQUEST_URI'] === '/add') {
     AddEntry($_POST['new_entry'], $_POST['new_entry_feel']);
     header("Location: /");
 }
+
 if ($_SERVER['REQUEST_URI'] === '/settings') {
     include(__DIR__ . "/pages/settings.php");
     die;

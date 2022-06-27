@@ -1,0 +1,20 @@
+{
+    "name": "justm/logger-diary-web",
+    "description": "A web/remote-stored version of the super simple diary app!",
+    "type": "project",
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Justm\\LoggerDiaryWeb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mar",
+            "email": "just.mar.ok2813@gmail.com"
+        }
+    ]
+}
